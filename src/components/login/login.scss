@@ -1,0 +1,18 @@
+@import '../shared/common.scss';
+
+.my-login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .my-login-card {
+    @media screen and (min-width: $break-medium) {
+      max-width: $break-medium;
+    }
+    @media screen and (max-width: $break-medium) {
+      height: 100vh;
+      border: 0px;
+    }
+  }
+}
+

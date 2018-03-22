@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import Welcome from './welcome';
+import Welcome from './welcome/welcome';
+import Login from './login/login';
 
 
 class App extends Component {
 
+  state = {
+    isLoggedIn: false,
+    user: ''
+  }
+
   render() {
     return (
-      <Welcome/>
+      this.state.isLoggedIn ?
+      <Welcome user={this.state.user}/> :
+      <Login/>
+
     );
   }
 }

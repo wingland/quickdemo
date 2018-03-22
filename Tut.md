@@ -133,3 +133,73 @@ npm install --save-dev babel-preset-react
   "plugins": ["transform-class-properties"]
 }
 ```
+
+## 3. Introduce UI components and wrote your own style
+
+
+### Get ready with dependencies
+We don't like native dom components, so we would leverage the existing UI component frameworks. Let's use bootstrap as an example.
+
+[Reactstrap](https://github.com/reactstrap/reactstrap) provides the bootstrap components as react components and is easy to use.
+
+```json
+npm install bootstrap@4.0.0 reactstrap@next  --save
+```
+
+Ignore the warning here, we don't need jquery, we only want style from bootstrap
+
+Import css from bootstrap in index.js:
+
+```js
+import 'bootstrap/dist/css/bootstrap.css';
+```
+
+Parcel does not need further configuration for css bundle/loading, so it is very easy to add css tye.
+
+
+### Add a static login form
+
+Let's start from a login form. You will need to add a login component.
+
+Import the required base components from reactstrap following the guide here: [reactstrap components](https://reactstrap.github.io/components/)
+
+And we got this Login Component: [login.js](./src/components/login/login.js).
+
+
+### Add styles to the login form
+
+1) The traditional way of css styling is to use scss/css file and import it in the above js.
+2) The other way of styling is using 'css in js' or a mixin, frameworks like [styled-components](https://www.styled-components.com/docs/basics) and [jss](http://cssinjs.org/react-jss/) which you can check later.
+
+The first approach is easy to understand, so we make use of it. We add some styles to make the login form behaviors responsively. (A centered box in large screen, and a stretched simple login form in small screen) in [login.scss](./src/components/login/login.scss) file.
+
+```js
+import "./login.scss";
+```
+
+
+You would need some global style/variables. so I added them here [./src/shared/common.scss](./src/components/shared/common.scss) And import that in the `login.scss` file.
+
+```scss
+@import '../shared/common.scss';
+```
+
+Put them under same directory in `login` directory makes the structure clean and easy to go through. Meanwhile, you would also have the requirements to put some ut code in the same level in the future.
+
+Import our component login in [app.js](./src/components/app.js), and modify App component logic a little bit. We will find the login page rendered correctly.
+
+The `src` now becomes:
+```
+src
+├── components
+│   ├── app.js
+│   ├── login
+│   │   ├── login.js
+│   │   └── login.scss
+│   ├── shared
+│   │   └── common.scss
+│   └── welcome
+│       └── welcome.js
+├── index.html
+└── index.js
+```
