@@ -1,5 +1,7 @@
-import {sayHello} from '../my-module/module-a';
-// or const {sayHello} = require ('../lucia-module');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/app';
 
-console.log(sayHello('lucia'));
-document.getElementById('demo').innerHTML = sayHello('Jesse');
+ReactDOM.render(<App/>,
+  document.getElementById('root')
+);
