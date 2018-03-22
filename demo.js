@@ -1,4 +1,4 @@
-const {sayHello} = require('./lucia-module');
+const {sayHello} = require('./my-module');
 
 const hello = sayHello('lucia');
 console.log(hello);

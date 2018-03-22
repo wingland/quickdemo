@@ -1,7 +1,7 @@
 ## Install
 
 ```
-npm install -g parcel-bundler
+npm install
 ```
 
 ## Use
@@ -17,11 +17,13 @@ node demo.js
 
 #### dev
 ```
-parcel index.html
+npm run dev
 ```
 
 #### build
 
 ```
-parcel build
+npm run build
 ```
+
+Web bundle files would be built into `/dist` directory
