@@ -169,6 +169,7 @@ And we got this Login Component: [login.js](./src/components/login/login.js).
 ### Add styles to the login form
 
 1) The traditional way of css styling is to use scss/css file and import it in the above js.
+
 2) The other way of styling is using 'css in js' or a mixin, frameworks like [styled-components](https://www.styled-components.com/docs/basics) and [jss](http://cssinjs.org/react-jss/) which you can check later.
 
 The first approach is easy to understand, so we make use of it. We add some styles to make the login form behaviors responsively. (A centered box in large screen, and a stretched simple login form in small screen) in [login.scss](./src/components/login/login.scss) file.
@@ -202,4 +203,22 @@ src
 │       └── welcome.js
 ├── index.html
 └── index.js
+```
+
+
+## 4. Add simple interactions to login and welcome
+
+In this step, we will make the login form works simply to show how interactions occur among components.
+
+
+Follow this [React Forms Guide](https://reactjs.org/docs/forms.html), we add input bindings and login actions in [login.js](./src/components/login/login.js).
+
+Temporarily, there is no router, we handle the interactions and save/pass states across components.
+Some login/logout logic were added in both `welcome.js` and `app.js`
+
+
+To add props check, we can use ['prop-types'](https://reactjs.org/docs/typechecking-with-proptypes.html) provided by React.
+
+```
+import PropTypes from 'prop-types';
 ```
